@@ -18,4 +18,19 @@ i = 0
 for i in range(number + 1):
     print(f"{i}!")
     i += 1
-
+print("Let's test your programming knowledge.")
+print("""
+Why do we exercise in the morning?
+1. To build muscle.
+2. To feel cheerful.
+3. To lose weight.
+4. To better digest food.
+""")
+def answers():
+    answer = int(input())
+    if answer == 2:
+        print("Congratulations, have a nice day!")
+    else:
+        print("Please, try again.")
+        answers()
+answers()
