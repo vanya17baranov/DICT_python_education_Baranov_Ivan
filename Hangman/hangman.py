@@ -3,7 +3,8 @@ print("HANGMAN")
 print("The game will be available soon")
 words = ["java", "javascript", "python", "php"]
 answers = random.choice(words)
-print("Guess the word:")
+help = answers[0] + answers[1] + "-" * (len(answers) -2)
+print("Guess the word " + help + ":")
 answer = input()
 if answer == answers:
     print("You survived!")
