@@ -14,15 +14,21 @@ while not done:
             print("_", end="")
     print("")
     guess = input("Input a letter:")
-    guesses.append(guess)
-    attempts -= 1
-    if guess not in answers:
-        print("That letter doesn\'t appear in the word")
-        if attempts == 0:
-            break
+    if guess in guesses:
+        attempts -= 1
+        print('No improvements')
+    if guess in answers:
+        guesses.append(guess)
+    else:
+        attempts -= 1
+    print("That letter doesn\'t appear in the word")
+    if attempts == 0:
+        break
     done = True
     for letter in answers:
         if letter not in guesses:
             done = False
-print("Thanks for playing!")
-print("We\'ll see how well you did in the next stage")
+if done:
+    print('Congrats')
+else:
+    print('Game over')
