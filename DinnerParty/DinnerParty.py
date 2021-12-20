@@ -15,11 +15,19 @@ money = int(input(">"))
 for_all = round(money / number_of_friends, 2)
 for i in names:
     names[i] = for_all
-print(names)
+
 print("""Do you want to use the "Who is lucky?" feature? Write Yes/No:""")
 choose = input(">")
 if choose == "Yes":
     lucky_name = random.choice(list(names.keys()))
     print("{} is the lucky one!".format(lucky_name))
-if choose == "No":
+    new_for_all = round(money / (number_of_friends - 1), 2)
+    for i in names.keys():
+        if i == lucky_name:
+            names[i] = 0
+        else:
+            names[i] = new_for_all
+    print(names)
+elif choose == "No":
     print("No one is going to be lucky.")
+    print(names)
